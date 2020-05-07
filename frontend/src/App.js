@@ -1,38 +1,22 @@
-import React from "react";
-import AceEditor from "react-ace";
-import "ace-builds/src-min-noconflict/ext-searchbox";
-import "ace-builds/src-noconflict/ext-settings_menu";
-import "ace-builds/src-min-noconflict/ext-language_tools";
-import "ace-builds/src-noconflict/mode-jsx";
-import "ace-builds/src-noconflict/mode-python";
-import "ace-builds/src-noconflict/theme-monokai";
+import React from 'react';
+import "./style.css"
+import CompileOutput from "./components/CompileOutput";
+import CodeEditor from "./components/CodeEditor";
+import BottomBar from "./components/BottomBar";
 
 function App() {
-  var users = ["person 1", "person 2", "person 3"];
   return (
-    <div>
-      <AceEditor
-        width="100%"
-        height="97vh"
-        mode="python"
-        theme="monokai"
-        name="editor"
-        fontSize={14}
-        commands={[{
-          name: "save",
-          bindKey: {win: "Ctrl-S", mac: "Command-S"},
-          exec: () => {}
-        }]}
-      />
+    <div className={"container"}>
+      <div className={"leftSide"}>
+        <CompileOutput />
+      </div>
 
-      <div style={{display: "inline-block"}}>
-        <div style={{float: "left"}}>
-          {users.map((user) => <div>{user}</div>)}
-        </div>
+      <div className={"rightSide"}>
+        <CodeEditor />
+      </div>
 
-        <div style={{float: "right"}}>
-          Settings
-        </div>
+      <div className={"bottom"}>
+        <BottomBar />
       </div>
     </div>
   );

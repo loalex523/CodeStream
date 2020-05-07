@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: #272822;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "output editor editor editor"
+        "footer footer footer footer";
+}
+
+.leftSide {
+    overflow-Y: auto;
+    grid-area: output;
+    border: 1px solid;
+    border-color: #797979;
+}
+
+.rightSide {
+    grid-area: editor;
+    border: 1px solid;
+    border-color: #797979;
+}
+
+.bottom {
+    grid-area: footer;
+    border: 1px solid;
+    border-color: #797979;
+}
+
+.textColor {
+    color: #F8F8F2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.users {
+    float: left;
+    margin-left: 15px;
+}
+
+.users > div {
+    display: inline;
+    padding-right: 10px;
+}
+
+.settings {
+    margin-right: 15px;
+}
+
+.settings > div {
+    float: right;
+}
+
+.runButton {
+    background: linear-gradient(#26dbb8, #32ceaf);
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 12px 38px;
+}
+
+.runButton:hover {
+    background: #48c9b0;
+    cursor: pointer;
+}
+
+.codeRunResults {
+    color: #F8F8F2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
