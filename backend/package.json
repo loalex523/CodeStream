@@ -2,7 +2,7 @@
   "name": "codestream-backend",
   "version": "1.0.0",
   "description": "CodeStream backend",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.15.2",
     "socket.io": "^2.2.0",
-    "socketio": "^1.0.0"
+    "socketio": "^1.0.0",
+    "wandbox-api": "0.0.0"
   }
 }
