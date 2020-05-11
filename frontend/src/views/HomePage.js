@@ -1,26 +1,20 @@
-import React from 'react'
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as challengesActions from '../actions/challengesActions';
-import ChallengesList from './ChallengesList';
+import React from "react";
 
-function HomePage(){
-    useEffect(() => {
-        if (this.props.challenges.length == 0) {
-          this.props.actions.getChallenges();
-        }
-    });
- 
-}
-export default HomePage;
-
-
-function mapStateToProps(state) {
-  return {challenges: state.challenges}
+function randomRoom() {
+  let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let str = "";
+  for (var i = 0; i < 8; i++)
+    str += chars[Math.floor(Math.random() * chars.length)];
+    
+  return window.location.origin+"/"+str;
 }
 
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(challengesActions, dispatch)}
+const Homepage = () => {
+  return (
+    <div>
+      <button><a href={randomRoom()}>Start room</a></button>
+    </div>
+  );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default Homepage;
