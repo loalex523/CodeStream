@@ -1,17 +1,22 @@
+import React, { useEffect, useState } from "react";
 
-import React from "react";
+const BottomBar = (props) => {
+  var [users, setState] = useState(props.userList);
 
-function BottomBar() {
-  var users = ["person 1", "person 2", "person 3"];
+  useEffect(() => {
+    setState(props.userList);
+  }, [props.userList]);
+  
   return (
     <div className={"textColor"}>
         <div className={"users"}>
           {users.map((user) => <div key={user}>{user}</div>)}
         </div>
 
-        <div className={"settings"}>
+        {/* TODO: Allow change in settings (Font) */}
+        {/* <div className={"settings"}>
           <div>Settings</div>
-        </div>
+        </div> */}
     </div>
   );
 }
